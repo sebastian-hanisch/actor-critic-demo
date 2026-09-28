@@ -1,5 +1,7 @@
 # 🎭 Actor-Critic
 
+**[→ Demo live ausprobieren](https://sebastianhanisch-actor-critic-demo.streamlit.app/)**
+
 Achtes und letztes Stück der **Reinforcement-Learning-Linie** der "Konzepte"-Reihe im Portfolio von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning. Direkte Fortsetzung von [Policy Gradient / REINFORCE](https://github.com/sebastian-hanisch/policy-gradient-demo) (Stück 7): derselbe Akteur (eine Softmax-Politik), aber zusätzlich ein gelernter **Kritiker** – eine Zustandswert-Schätzung $V(s)$, die bei jedem einzelnen Schritt einen TD-Fehler als Vorteils-Schätzung liefert, statt auf die volle Episoden-Rückgabe zu warten.
 
 ## Kernfrage
