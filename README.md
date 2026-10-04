@@ -13,7 +13,7 @@ Achtes und letztes Stück der **Reinforcement-Learning-Linie** der "Konzepte"-Re
 - **Vehikel:** dasselbe 3×4-Standardraster wie bei REINFORCE (Stück 7) – aus demselben Grund (episodisches Lernen braucht ein Raster, auf dem Episoden zuverlässig enden).
 - **Der Akteur** (`ac_policy.py`): byte-gleich zu Stück 7 – eine lineare Softmax-Regression über One-Hot-Zustandsmerkmalen.
 - **Der Kritiker** (`ac_critic.py`): eine lineare Zustandswert-Schätzung $V(s) = w^\top x(s)$ – mit One-Hot-Merkmalen ist $w_s$ direkt der geschätzte Wert von Zustand $s$.
-- **One-step Actor-Critic** (`ac_agent.py`, Sutton & Barto 2018, Algorithmus 13.5): bei jedem Schritt TD-Fehler $\delta = r + \gamma V(s') - V(s)$, Kritiker-Update $w \leftarrow w + \alpha_w\delta\,x(s)$, Akteur-Update $\theta \leftarrow \theta + \alpha_\theta\gamma^t\delta\,\nabla_\theta\log\pi(a|s)$.
+- **One-step Actor-Critic** (`ac_agent.py`, Sutton & Barto 2018, Abschnitt 13.5): bei jedem Schritt TD-Fehler $\delta = r + \gamma V(s') - V(s)$, Kritiker-Update $w \leftarrow w + \alpha_w\delta\,x(s)$, Akteur-Update $\theta \leftarrow \theta + \alpha_\theta\gamma^t\delta\,\nabla_\theta\log\pi(a|s)$.
 - **Korrektheits-Check:** die Basislinien-Identität $\mathbb{E}_{a\sim\pi}[b(s)\nabla_\theta\log\pi(a|s)] = 0$ für jede aktionsunabhängige Funktion $b(s)$ – exakt nachgerechnet durch Aufsummieren über alle Aktionen einer winzigen Politik (kein Sampling, keine Stichprobenabweichung).
 
 ## Der sauberste Befund der ganzen Linie

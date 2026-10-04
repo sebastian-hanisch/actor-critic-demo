@@ -1,5 +1,5 @@
 """Zwei Trainingsschleifen auf demselben Vehikel: `train_reinforce` (episodisches Monte-Carlo-REINFORCE, byte-gleich zu `policy-gradient-demo`s
-Agent - der Vergleichsmassstab) und `train_actor_critic` (Sutton & Barto 2018, Algorithmus 13.5: One-step Actor-Critic). Der Unterschied ist NICHT
+Agent - der Vergleichsmassstab) und `train_actor_critic` (Sutton & Barto 2018, Abschnitt 13.5: One-step Actor-Critic). Der Unterschied ist NICHT
 der Akteur (identische Softmax-Politik), sondern WOMIT er aktualisiert wird: REINFORCE wartet auf die volle Episoden-Rueckgabe, Actor-Critic
 nutzt bei JEDEM Schritt den TD-Fehler eines gelernten Kritikers als Schaetzung des Vorteils - kein Warten auf das Episodenende noetig."""
 
@@ -66,7 +66,7 @@ def train_reinforce(grid, feature_fn, n_features, lr, episodes, seed, max_steps=
 
 
 def train_actor_critic(grid, feature_fn, n_features, lr_actor, lr_critic, episodes, seed, max_steps=C.MAX_STEPS_PER_EPISODE, checkpoints=()):
-    """One-step Actor-Critic (Sutton & Barto 2018, Algorithmus 13.5): TD-Fehler des Kritikers als Vorteils-Schaetzung, Aktualisierung bei
+    """One-step Actor-Critic (Sutton & Barto 2018, Abschnitt 13.5): TD-Fehler des Kritikers als Vorteils-Schaetzung, Aktualisierung bei
     JEDEM Schritt statt erst am Episodenende."""
     rng = np.random.default_rng(seed)
     policy = SoftmaxPolicy(n_features, N_ACTIONS, seed)

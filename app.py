@@ -190,7 +190,7 @@ with st.expander("📐 Mathematische Formulierung"):
 
 **Kritiker-Update (semi-gradientes TD(0)):** $w \leftarrow w + \alpha_w\,\delta_t\,x(s_t)$.
 
-**Akteur-Update (One-step Actor-Critic, Sutton & Barto 2018, Algorithmus 13.5):** $\theta \leftarrow \theta + \alpha_\theta\,\gamma^t\,\delta_t\,\nabla_\theta\log\pi_\theta(a_t|s_t)$.
+**Akteur-Update (One-step Actor-Critic, Sutton & Barto 2018, Abschnitt 13.5):** $\theta \leftarrow \theta + \alpha_\theta\,\gamma^t\,\delta_t\,\nabla_\theta\log\pi_\theta(a_t|s_t)$.
 
 **Basislinien-Identität (Korrektheits-Check):** für jede von der Aktion unabhängige Funktion $b(s)$ gilt $\mathbb{E}_{a\sim\pi}[b(s)\,\nabla_\theta\log\pi(a|s)] = b(s)\,\mathbb{E}_{a\sim\pi}[\nabla_\theta\log\pi(a|s)] = 0$, da $\sum_a \pi(a|s) = 1$ konstant ist und daher $\nabla_\theta \sum_a \pi(a|s) = \sum_a \nabla_\theta\pi(a|s) = 0$.
 """
